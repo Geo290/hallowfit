@@ -1,2 +1,2 @@
 # Hallowfit
-# Make halloween fit you! 🎃
+## Make halloween fit you! 🎃

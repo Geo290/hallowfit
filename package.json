@@ -1,0 +1,19 @@
+{
+  "name": "hallowfit",
+  "version": "1.0.0",
+  "description": "Landing page for Hallowfit",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Geo290/hallowfit.git"
+  },
+  "author": "Geo290",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Geo290/hallowfit/issues"
+  },
+  "homepage": "https://github.com/Geo290/hallowfit#readme"
+}

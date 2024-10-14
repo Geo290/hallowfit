@@ -1,0 +1,369 @@
+@font-face {
+    font-family: "Black Phantom";
+    src: url("../fonts/Black\ Phantom\ -\ Demo.otf");
+}
+
+@font-face {
+    font-family: "Caltoria Luxury";
+    src: url("../fonts/Caltoria\ Luxury.ttf");
+}
+
+* {
+    text-decoration: none;
+    color: azure;
+    scroll-behavior: smooth;
+    font-family: "caltoria Luxury";
+    list-style-type: none;
+}
+
+body {
+    margin: auto;
+    padding: auto;
+    background-color: black;
+}
+
+body::-webkit-scrollbar {
+    display: none;
+}
+
+.intro {
+    .navbar {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    .navbar>.logo {
+        display: flex;
+        width: 12vw;
+        margin: 0 3vw;
+    }
+
+    .logo>img {
+        width: 100%;
+        height: auto;
+    }
+
+    .link-list {
+        display: flex;
+        padding: 0 1.5vw;
+    }
+
+    .link {
+        margin: 0 02vw;
+        padding: 0.5vw;
+        color: aliceblue;
+        font-size: 2vw;
+    }
+    .link:hover {
+        text-shadow: 0 0 10px rgba(255, 77, 46, 1);
+    }
+    .presentation {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background-image: url("../imgs/backgrounds/landscape_purple.jpg");
+        background-size: cover;
+        background-position: center;
+        text-align: center;
+        position: relative;
+        height: calc(100vh - 80px);
+        z-index: 1;
+    }
+    .presentation::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        backdrop-filter: blur(10px);
+        /* Applies blur to background */
+        background-color: rgba(0,0,0,0.4);
+        /* Optional: Darkens the background a bit */
+        background: rgb(0,0,0);
+        background: linear-gradient(180deg, rgba(0,0,0,1) 0%, rgba(41,40,40,0.6) 30%, rgba(41,40,40,0.5970763305322129) 70%, rgba(0,0,0,1) 100%);
+        z-index: -1;
+        /* Ensures it is behind the text */
+    }
+    .text {
+        font-size: 2rem;
+        color: white;
+        position: relative;
+        z-index: -1;
+    }
+
+    #shop-name {
+        font-family: "Black Phantom";
+        font-size: 15vw;
+        margin: 0;
+        color: white;
+    }
+
+    #shop-moto {
+        font-size: 5vw;
+        margin: 0;
+    }
+
+    #start {
+        color: white;
+        padding: 1vw 5vw;
+        border-radius: 50px;
+        background-color: rgb(255, 77, 46);
+        display: inline-block;
+        animation: beat 1.5s ease-in-out infinite;
+    }
+    #start:hover{
+        background-color: rgb(253, 50, 15);
+    }
+    #start:focus {
+        background-color: rgb(250, 70, 46);
+        animation: pushed 1s ease-in;
+    }
+}
+
+.catalog {
+    width: 100%;
+    display: flex;
+    position: relative;
+    overflow: hidden;
+
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    color: aliceblue;
+
+    h1 {
+        font-size: 3.5rem;
+        margin: 5vh 0 0 0;
+    }
+
+    .slider {
+        display: flex;
+        transition: transform 0.5s ease;
+        overflow-x: scroll;
+        scroll-snap-type: x mandatory;
+    }
+
+    .slider::-webkit-scrollbar {
+        display: none;
+    }
+
+    .slide-card {
+        margin: 1vw;
+        padding: 5%;
+        display: flex;
+        min-width: 100%;
+        box-sizing: border-box;
+        scroll-snap-align: start;
+    }
+
+    .slide-card picture {
+        width: 40%;
+        margin: 0 1rem 0 0;
+        flex-shrink: 0;
+    }
+
+    picture>img {
+        width: 100%;
+        height: 100%;
+        display: block;
+    }
+
+    .info {
+        color: aliceblue;
+        display: block;
+        padding: 1vw;
+        width: 60%;
+    }
+
+    .info h2 {
+        color: antiquewhite;
+        text-align: center;
+        font-size: 2.5rem;
+    }
+
+    .info p {
+        text-align: justify;
+        font-size: 1.5rem;
+    }
+}
+
+.about {
+    display: flex;
+    flex-direction: column;
+    font-size: 1.6vw;
+
+    h1 {
+        text-align: center;
+    }
+
+    .info-section {
+        display: flex;
+        flex-direction: row;
+        padding: 5vw;
+    }
+
+    .shop {
+        display: flex;
+        margin: 0;
+    }
+
+    .info {
+        width: 33%;
+    }
+
+    picture {
+        width: 70%;
+    }
+
+    img {
+        width: 100%;
+        display: block;
+    }
+
+    label {
+        color: darkgray;
+        font-size: large;
+    }
+}
+
+.go-up-button {
+    display: none;
+    justify-content: center;
+    align-items: center;
+    font-size: 5vw;
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background-color: rgb(255, 77, 46);
+    width: 5vw;
+    height: 5vw;
+    border-radius: 50%;
+    text-align: center;
+    cursor: pointer; 
+    transition: opacity 0.3s ease;
+}
+.go-up-button.show {
+    display: flex;
+    /* Display button when it's shown */
+}
+.go-up-button:hover {
+    box-shadow: 0 0 10px rgba(255, 77, 46, 0.5);
+}
+
+
+@keyframes beat {
+    0%, 100% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.1);
+    }
+}
+
+@keyframes pushed {
+    0% {
+        transform: scale(0.9);
+    }
+    100% {
+        transform: scale(1);
+    }
+}
+
+@media only screen and (max-width: 600px) {
+    .intro {
+        .link-list {
+            display: none;
+        }
+        .navbar>.logo {
+            width: 15vh;
+            margin: 0 2vh;
+        }
+        .logo>img {
+            width: 100%;
+            height: auto;
+        }
+        .text {
+            font-size: 4.5vh;
+        }
+        #shop-name {
+            font-size: 10vh;
+        }
+        #shop-moto {
+            font-size: 5vh;
+        }
+        #start {
+            color: white;
+            padding: 1vw 5vw;
+        }
+    }
+    
+    .catalog {
+        h1 {
+            font-size: 4.5vh;
+        }
+        .slider {
+            width: 100%;
+        }
+        .slide-card {
+            padding: 5%;
+            display: flex;
+            min-width: 100%;
+            flex-direction: column;
+        }
+        .slide-card picture {
+            width: fit-content;
+            margin: 0 1vh 0 0;
+        }
+    
+        picture > img {
+            aspect-ratio: 1 / 1;
+            object-fit: cover;
+            display: block;
+        }
+    
+        .info {
+            color: white;
+            width: 100%;
+        }
+    
+        .info h2 {
+            font-size: 4vh;
+        }
+    
+        .info p {
+            font-size: 3vh;
+        }
+    }
+
+    .about {
+        font-size: 2.25vh;
+        ul {
+            padding: 0;
+            margin: 0;
+        }
+        
+        .info-section {
+            display: flex;
+            flex-direction: column;
+        }
+    
+        .shop {
+            display: none;
+        }
+    
+        .info {
+            width: 100%;
+        }
+        .info p {
+            font-size: 2.5vh;
+        } 
+    }
+    .go-up-button {
+        font-size: 5vh;
+        width: 10vh;
+        height: 10vh;
+    }
+}
