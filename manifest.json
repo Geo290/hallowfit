@@ -10,8 +10,13 @@
   "scope": "./",
   "icons": [
     {
-      "src": "./imgs/Hallowfit_logo_pwa.png",
+      "src": "./imgs/log/Hallowfit_logo_pwa.png",
       "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "./imgs/log/Hallowfit_logo_pwa.png",
+      "sizes": "512x512",
       "type": "image/png"
     }
   ]
