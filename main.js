@@ -1,6 +1,6 @@
 if ("serviceWorker" in navigator) {
   window.addEventListener("load", () => {
-    navigator.serviceWorker.register("./scripts/serviceWorker.js").then(
+    navigator.serviceWorker.register("./serviceWorker.js").then(
       (registration) => {
         console.log("Service Worker registered with scope:");
       },
