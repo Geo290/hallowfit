@@ -13,19 +13,23 @@ const urlsToCache = [
   "./imgs/icons/android-launchericon-144-144.png",
   "./imgs/icons/android-launchericon-192-192.png",
   "./imgs/icons/android-launchericon-512-512.png",
+  "./imgs/backgrounds/city.jpg",
   "./imgs/logo/emmanuel_portfolio_logo.png",
-  './imgs/college/utna.jpg',
-  './imgs/skills/skills.avif',
+  "./imgs/college/utna.jpg",
+  "./imgs/skills/skills.avif",
   "./imgs/proyects/itosMansion.png",
   "./imgs/proyects/sopiletras.png",
-  "./imgs/proyects/yournal-thumbnail.png"
+  "./imgs/proyects/yournal-thumbnail.png",
 ];
 
 self.addEventListener("install", (e) => {
   e.waitUntil(
     //le decimos que detenga el evento hasta que se ejecute lo siguiente
     caches.open(CACHE_NAME).then((cache) => {
-      return cache.addAll(urlsToCache).then(() => self.skipWaiting);
+      return cache.addAll(urlsToCache).then(() => {
+        console.log("service installed");
+        self.skipWaiting;
+      });
     })
   );
 });
